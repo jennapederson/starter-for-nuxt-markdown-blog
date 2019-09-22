@@ -1,3 +1,4 @@
+const path = require('path')
 
 export default {
   mode: 'universal',
@@ -58,6 +59,13 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push(
+        {
+            test: /\.md$/,
+            include: path.resolve(__dirname, "content"),
+            loader: "frontmatter-markdown-loader",
+        }
+      );
     }
   }
 }
