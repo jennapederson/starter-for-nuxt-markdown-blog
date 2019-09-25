@@ -1,4 +1,7 @@
 const path = require('path')
+const glob = require('glob')
+
+const markdownPaths = ['blog']
 
 export default {
   mode: 'universal',
@@ -44,6 +47,9 @@ export default {
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'
   ],
+  generate: {
+    routes: dynamicMarkdownRoutes()
+  },
   /*
   ** Build configuration
   */
@@ -68,4 +74,13 @@ export default {
       );
     }
   }
+}
+
+function dynamicMarkdownRoutes() {
+  return [].concat(
+    ...markdownPaths.map(mdPath => {
+      return glob.sync(`${mdPath}/*.md`, { cwd: 'content' })
+        .map(filepath => `${mdPath}/${path.basename(filepath, '.md')}`);
+    })
+  );
 }
