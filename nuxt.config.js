@@ -67,11 +67,11 @@ export default {
     extend (config, ctx) {
       config.module.rules.push(
         {
-            test: /\.md$/,
-            include: path.resolve(__dirname, "content"),
-            loader: "frontmatter-markdown-loader",
+          test: /\.md$/,
+          include: path.resolve(__dirname, 'content'),
+          loader: 'frontmatter-markdown-loader'
         }
-      );
+      )
     }
   }
 }
