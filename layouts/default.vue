@@ -21,7 +21,7 @@
 
       <div id="header-navbar-menu" class="navbar-menu" :class="{'is-active': showHeaderNavbarMenu}">
         <div class="navbar-end">
-          <nuxt-link to="/" class="navbar-item">
+          <nuxt-link to="/" class="navbar-item" exact-active-class="is-active">
             Home
           </nuxt-link>
         </div>
