@@ -27,7 +27,9 @@
         </div>
       </div>
     </nav>
-    <nuxt />
+    <section class="section">
+      <nuxt />
+    </section>
   </div>
 </template>
 
