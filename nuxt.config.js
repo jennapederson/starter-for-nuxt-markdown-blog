@@ -45,8 +45,12 @@ export default {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    '@nuxtjs/axios'
   ],
+  axios: {
+    baseURL: '/'
+  },
   generate: {
     routes: dynamicMarkdownRoutes()
   },

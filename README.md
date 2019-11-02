@@ -13,6 +13,11 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
+# run via netlify CLI with functions
+$ netlify dev
+
+When running via `netflify dev` point your browser at localhost:8888 so the site and functions are hosted on the same port.
+
 # build for production and launch server
 $ yarn build
 $ yarn start
@@ -21,7 +26,11 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Functions
+
+### Running the send-contact-email function
+
+$ netlify functions:invoke send-contact-email --no-identity --payload '{"contactEmail" : "jenna@example.com", "contactName" : "Jenna", "message" : "Hello world from a function!"}'
 
 # Deploy Your Own On Netlify
 

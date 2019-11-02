@@ -24,6 +24,9 @@
           <nuxt-link to="/" class="navbar-item" exact-active-class="is-active">
             Home
           </nuxt-link>
+          <nuxt-link to="/contact" class="navbar-item" exact-active-class="is-active">
+            Contact
+          </nuxt-link>
         </div>
       </div>
     </nav>
