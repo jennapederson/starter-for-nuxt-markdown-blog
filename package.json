@@ -13,7 +13,9 @@
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
+    "dotenv": "^8.2.0",
     "frontmatter-markdown-loader": "^2.1.0",
+    "mailgun-js": "^0.22.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
