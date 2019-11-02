@@ -27,8 +27,10 @@
         </div>
       </div>
     </nav>
-    <section class="section">
-      <nuxt />
+    <section class="section columns">
+      <div class="column is-offset-1 is-10">
+        <nuxt />
+      </div>
     </section>
   </div>
 </template>
