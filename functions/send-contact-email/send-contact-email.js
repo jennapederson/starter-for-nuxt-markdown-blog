@@ -1,6 +1,15 @@
 require('dotenv').config()
-const { MAILGUN_API_KEY, MAILGUN_DOMAIN, MAILGUN_URL, FROM_EMAIL_ADDRESS, CONTACT_TO_EMAIL_ADDRESS } = process.env
+const { MAILGUN_API_KEY, MAILGUN_DOMAIN, MAILGUN_URL, FROM_EMAIL_ADDRESS, CONTACT_TO_EMAIL_ADDRESS, SEND_EMAIL } = process.env
 const mailgun = require('mailgun-js')({ apiKey: MAILGUN_API_KEY, domain: MAILGUN_DOMAIN, url: MAILGUN_URL })
+
+const sendEmail = (data) => {
+  if (SEND_EMAIL && SEND_EMAIL === 'false') {
+    // eslint-disable-next-line no-console
+    console.log('SEND_EMAIL is false. Data: ', data)
+    return Promise.resolve()
+  }
+  return mailgun.messages().send(data)
+}
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -19,8 +28,7 @@ exports.handler = async (event) => {
     subject: `New contact from ${data.contactName}`,
     text: `Name: ${data.contactName}\nEmail: ${data.contactEmail}\nMessage: ${data.message}`
   }
-
-  return mailgun.messages().send(mailgunData).then(() => ({
+  return sendEmail(mailgunData).then(() => ({
     statusCode: 200,
     body: "Your message was sent successfully! We'll be in touch."
   })).catch(error => ({
