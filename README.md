@@ -2,7 +2,7 @@
 
 > Starter for a Nuxt Markdown Blog
 
-Check it out here: https://starter-for-nuxt-markdown-blog.amplifyapp.com/
+Check it out here: https://main.d3io2o9z2eqm11.amplifyapp.com/
 
 Looking for the Netlify version? Check it out on the [deploy-to-netlifiy branch](https://github.com/jennapederson/starter-for-nuxt-markdown-blog/tree/deploy-on-netlify).
 
