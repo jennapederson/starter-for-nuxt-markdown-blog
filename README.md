@@ -2,7 +2,9 @@
 
 > Starter for a Nuxt Markdown Blog
 
-Check it out here: https://starter-for-nuxt-markdown-blog.netlify.com/
+Check it out here: https://starter-for-nuxt-markdown-blog.amplifyapp.com/
+
+Looking for the Netlify version? Check it out on the [deploy-to-netlfiy branch](/jennapederson/starter-for-nuxt-markdown-blog/tree/deploy-on-netlify).
 
 ## Build Setup
 
@@ -13,11 +15,6 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# run via netlify CLI with functions
-$ netlify dev
-
-When running via `netflify dev` point your browser at localhost:8888 so the site and functions are hosted on the same port.
-
 # build for production and launch server
 $ yarn build
 $ yarn start
@@ -26,13 +23,6 @@ $ yarn start
 $ yarn generate
 ```
 
-## Functions
+# Deploy Your Own On AWS Amplify
 
-### Running the send-contact-email function
-
-$ netlify functions:invoke send-contact-email --no-identity --payload '{"contactEmail" : "jenna@example.com", "contactName" : "Jenna", "message" : "Hello world from a function!"}'
-
-# Deploy Your Own On Netlify
-
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jennapederson/starter-for-nuxt-markdown-blog)
+[![amplifybutton](https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/jennapederson/starter-for-nuxt-markdown-blog)
